@@ -1,48 +1,48 @@
 * {
-    border: 0;
-    color: rgb(93, 91, 91);
-    list-style: none;
+  border: 0;
+  color: rgb(93, 91, 91);
+  list-style: none;
 }
 
 #todo-list {
-    margin: 10rem auto 0;
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-    box-shadow: 10px 8px 8px rgb(227, 226, 226);
+  margin: 10rem auto 0;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  box-shadow: 10px 8px 8px rgb(227, 226, 226);
 }
 
 #todo-list h3 {
-    border-bottom: 1px solid gainsboro;
+  border-bottom: 1px solid gainsboro;
 }
 
 #task-input {
-    width: 95%;
-    padding: 0.8rem 0.4rem;
-    display: block;
-    border-bottom: 1px solid gainsboro;
+  width: 95%;
+  padding: 0.8rem 0.4rem;
+  display: block;
+  border-bottom: 1px solid gainsboro;
 }
 
 #li-id {
-    display: flex;
-    width: 50%;
-    gap: 1rem;
+  display: flex;
+  width: 50%;
+  gap: 1rem;
 }
 
 .li-div {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
 }
 
 .fa-solid {
-    padding: 0 0.8rem;
+  padding: 0 0.8rem;
 }
 
 .input-div {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
