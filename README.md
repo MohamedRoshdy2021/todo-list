@@ -42,14 +42,11 @@ After you're finished please remove all the comments and instructions!
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
-  - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
   - [Install](#install)
   - [Usage](#usage)
-  - [Run tests](#run-tests)
-  - [Deployment](#deployment)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
@@ -102,9 +99,6 @@ After you're finished please remove all the comments and instructions!
 
 <!-- LIVE DEMO -->
 
-## 💻 Live Demo <a id="live-demo"></a>
-
-> coming soon 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -147,15 +141,8 @@ run this npm command
 
 To run the project, execute the following command:
 
-open index.html file using live server extension
+run this command  npm run start file using live server extension
 
-### Run tests
-
-coming soon!
-
-### Deployment
-
-coming soon!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
