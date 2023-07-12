@@ -33,36 +33,47 @@ function renderTasks() {
     taskText.innerHTML = `<input type="checkbox"><p class="description">${element.description}</p>`;
     taskDiv.appendChild(taskText);
 
+    const trashcan = document.createElement('i');
+    trashcan.className = 'fa-solid fa-trash-can trash';
+    taskDiv.appendChild(trashcan);
+
     const deleteIcon = document.createElement('i');
     deleteIcon.className = 'fa-solid delete fa-ellipsis-vertical';
     taskDiv.appendChild(deleteIcon);
 
     tasklist.appendChild(taskDiv);
-
     const checkbox = taskText.querySelector('input[type="checkbox"]');
     checkbox.addEventListener('change', () => {
       if (checkbox.checked) {
-        taskText.style.textDecoration = 'line-through';
-
-        deleteIcon.addEventListener('click', () => {
+        trashcan.style.display = 'block';
+        taskDiv.style.backgroundColor = 'gainsboro';
+        trashcan.addEventListener('click', () => {
           deleteTask(index);
           renderTasks();
         });
-      } else {
+        taskText.style.textDecoration = 'line-through';
+      } else if (!checkbox.checked) {
         taskText.style.textDecoration = 'none';
+        trashcan.style.display = 'none';
+        renderTasks();
       }
     });
 
     const Span = taskText.querySelector('.description');
     Span.addEventListener('click', () => {
       Span.contentEditable = true;
+      Span.addEventListener('blur', () => {
+        const values = Array.from(tasklist.children).indexOf(taskDiv);
+        tasks[values].description = Span.textContent;
+        saveTasksToLocalStorage();
+      });
     });
-  });
 
-  clearall.addEventListener('click', () => {
-    tasklist.innerHTML = '';
-    tasks = [];
-    localStorage.removeItem('tasks');
+    clearall.addEventListener('click', () => {
+      tasklist.innerHTML = '';
+      tasks = [];
+      localStorage.removeItem('tasks');
+    });
   });
 }
 // just to make sure if there was an items in the local storage we grap it

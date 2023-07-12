@@ -55,3 +55,18 @@ a {
   cursor: pointer;
   padding: 1rem 0;
 }
+
+.delete {
+  cursor: pointer;
+}
+
+.trash {
+  position: relative;
+  left: 25%;
+  display: none;
+  cursor: pointer;
+}
+
+.trash.block {
+  display: block;
+}
