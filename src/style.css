@@ -70,3 +70,7 @@ a {
 .trash.block {
   display: block;
 }
+
+.sign {
+  cursor: pointer;
+}
