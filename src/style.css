@@ -1,0 +1,76 @@
+* {
+  border: 0;
+  color: rgb(93, 91, 91);
+  list-style: none;
+}
+
+#todo-list {
+  margin: 10rem auto 0;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  box-shadow: 10px 8px 8px rgb(227, 226, 226);
+}
+
+#todo-list h3 {
+  border-bottom: 1px solid gainsboro;
+}
+
+#task-input {
+  width: 95%;
+  padding: 0.8rem 0.4rem;
+  display: block;
+  border-bottom: 1px solid gainsboro;
+}
+
+#li-id {
+  display: flex;
+  width: 50%;
+  gap: 1rem;
+}
+
+.li-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid gainsboro;
+}
+
+.fa-solid {
+  padding: 0 0.8rem;
+}
+
+.input-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  font-size: 1.25rem;
+  text-align: center;
+  cursor: pointer;
+  padding: 1rem 0;
+}
+
+.delete {
+  cursor: pointer;
+}
+
+.trash {
+  position: relative;
+  left: 25%;
+  display: none;
+  cursor: pointer;
+}
+
+.trash.block {
+  display: block;
+}
+
+.sign {
+  cursor: pointer;
+}
