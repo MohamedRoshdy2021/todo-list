@@ -47,12 +47,11 @@ export function renderTasks() {
     const checkbox = taskText.querySelector('input[type="checkbox"]');
     checkbox.addEventListener('change', () => {
       if (checkbox.checked) {
-        if (!element.completed)
-          element.completed = true 
-          saveTasksToLocalStorage()          
-        
+        if (!element.completed) element.completed = true;
+        saveTasksToLocalStorage();
+
         trashcan.style.display = 'block';
-        checkbox.style.color = 'black'
+        checkbox.style.color = 'black';
         taskDiv.style.backgroundColor = 'rgb(240, 216, 80)';
         trashcan.addEventListener('click', () => {
           deleteTask(index);
@@ -62,8 +61,8 @@ export function renderTasks() {
       } else if (!checkbox.checked) {
         taskText.style.textDecoration = 'none';
         trashcan.style.display = 'none';
-        element.completed = false
-        saveTasksToLocalStorage() 
+        element.completed = false;
+        saveTasksToLocalStorage();
         renderTasks();
       }
     });
@@ -77,13 +76,8 @@ export function renderTasks() {
         saveTasksToLocalStorage();
       });
     });
-
-    clearall.addEventListener('click', () => {
-      clearCompleted();
-    });
   });
 }
-
 
 // just to make sure if there was an items in the local storage we grap it
 if (localStorage.getItem('tasks')) {
@@ -91,9 +85,12 @@ if (localStorage.getItem('tasks')) {
   renderTasks();
 }
 
-
 function clearCompleted() {
   tasks = tasks.filter((task) => !task.completed);
   saveTasksToLocalStorage();
   renderTasks();
 }
+
+clearall.addEventListener('click', () => {
+  clearCompleted();
+});
