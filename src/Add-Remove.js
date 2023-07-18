@@ -47,15 +47,16 @@ export function renderTasks() {
     const checkbox = taskText.querySelector('input[type="checkbox"]');
     checkbox.addEventListener('change', () => {
       if (checkbox.checked) {
-        if (!element.completed) element.completed = true;
-        saveTasksToLocalStorage();
-
+        if (!element.completed) {
+          element.completed = true;
+          saveTasksToLocalStorage();
+        }
         trashcan.style.display = 'block';
-        checkbox.style.color = 'black';
         taskDiv.style.backgroundColor = 'rgb(240, 216, 80)';
         trashcan.addEventListener('click', () => {
           deleteTask(index);
           renderTasks();
+          updateTaskIndexes()
         });
         taskText.style.textDecoration = 'line-through';
       } else if (!checkbox.checked) {
@@ -86,11 +87,14 @@ if (localStorage.getItem('tasks')) {
 }
 
 function clearCompleted() {
-  tasks = tasks.filter((task) => !task.completed);
-  saveTasksToLocalStorage();
-  renderTasks();
+  tasks = tasks.filter( (task , index)=> {
+    return !task.completed
+  });
 }
 
 clearall.addEventListener('click', () => {
   clearCompleted();
+  updateTaskIndexes()
+  saveTasksToLocalStorage();
+  renderTasks();
 });
