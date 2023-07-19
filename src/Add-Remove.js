@@ -19,9 +19,9 @@ function updateTaskIndexes() {
 // deleting elements by the splice method by index one by one
 function deleteTask(index) {
   tasks.splice(index, 1);
-  updateTaskIndexes();
-  saveTasksToLocalStorage();
 }
+
+module.exports = deleteTask
 
 // displaying the elemnts to the current dom with events
 export function renderTasks() {
@@ -57,6 +57,8 @@ export function renderTasks() {
           deleteTask(index);
           renderTasks();
           updateTaskIndexes()
+          updateTaskIndexes();
+          saveTasksToLocalStorage();
         });
         taskText.style.textDecoration = 'line-through';
       } else if (!checkbox.checked) {
@@ -87,7 +89,7 @@ if (localStorage.getItem('tasks')) {
 }
 
 function clearCompleted() {
-  tasks = tasks.filter( (task , index)=> {
+  tasks = tasks.filter( (task)=> {
     return !task.completed
   });
 }
